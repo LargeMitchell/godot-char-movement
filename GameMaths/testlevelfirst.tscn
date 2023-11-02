@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://688ybqnoswbx"]
+
+[ext_resource type="PackedScene" uid="uid://y8lb0b5lrhwe" path="res://Player/PlayerFirst.tscn" id="1_dbcl2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgv50"]
+size = Vector2(456, 140)
+
+[node name="Level" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(576, 576)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_qgv50")
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(576, -64, 576, 72, -576, 72, -576, -64)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/Polygon2D"]
+position = Vector2(256, -131.765)
+scale = Vector2(0.0138889, 0.941176)
+color = Color(0.47451, 0, 0, 1)
+polygon = PackedVector2Array(576, -64, 576, 4.84698, 576, 72, -576, 72, -576, -64, 10.8799, -64)
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D/Polygon2D"]
+position = Vector2(-348, -136)
+scale = Vector2(0.395833, 1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(576, -64, 576, 4.39688, 576, 72, -576, 72, -576, 1.64392, -576, -64)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(-348, -130)
+shape = SubResource("RectangleShape2D_qgv50")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 808.0
+offset_top = 440.0
+offset_right = 1768.0
+offset_bottom = 713.0
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/normal_font_size = 200
+text = "100 units"
+fit_content = true
+tab_size = 8
+
+[node name="PlayerFirst" parent="." instance=ExtResource("1_dbcl2")]
+position = Vector2(240, 344)

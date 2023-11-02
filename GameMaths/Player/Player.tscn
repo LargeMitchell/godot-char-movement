@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8w1mcach51qd"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_8ge4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykklj"]
+size = Vector2(64, 64)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_8ge4t")
+jumpHeight = 200.0
+maxSpeed = 500.0
+maxAcceleration = 2000.0
+maxDeceleration = 5000.0
+maxTurnSpeed = 10000.0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_ykklj")
